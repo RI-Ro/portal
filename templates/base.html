@@ -27,11 +27,11 @@ img.emoji {
 <!-- FotoGalery
 -->
 <!-- jQuery 1.8 or later, 33 KB -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static 'js/jquery.min.1.11.1.js' %}"></script>
 
 <!-- Fotorama from CDNJS, 19 KB -->
-<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+<link  href="{% static 'css/fotorama.css' %}" rel="stylesheet">
+<script src="{% static 'js/fotorama.js' %}"></script>
 <!-- END FotoGalery
 -->
 
@@ -48,7 +48,7 @@ img.emoji {
 <link rel='stylesheet' id='woocommerce-general-css'  href="{% static 'css/woocommerce.css' %}" media='all' />
 <link rel='stylesheet' id='magazine-woocommerce-styles-css'  href="{% static 'css/magazine-woocommerce.css' %}" media='screen' />
 <style id='woocommerce-inline-inline-css'>
-.woocommerce form .form-row .required { visibility: visible; }
+	.woocommerce form .form-row .required { visibility: visible; }
 </style>
 <link rel='stylesheet' id='dashicons-css'  href="{% static 'css/dashicons.min.css' %}" media='all' />
 <link rel='stylesheet' id='magazine-pro-fonts-css'  href="{% static 'css/fonts.css' %}" media='all' />
@@ -191,31 +191,22 @@ img.emoji {
 			document.body.className = c;
 		})();
 	</script>
-	<script src='https://demo.studiopress.com/magazine/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.4.1' id='jquery-blockui-js'></script>
-<script id='wc-add-to-cart-js-extra'>
-var wc_add_to_cart_params = {"ajax_url":"\/magazine\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/magazine\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/demo.studiopress.com\/magazine\/woocommerce\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
-</script>
-<script src='https://demo.studiopress.com/magazine/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=6.4.1' id='wc-add-to-cart-js'></script>
-<script src='https://demo.studiopress.com/magazine/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.4.1' id='js-cookie-js'></script>
-<script id='woocommerce-js-extra'>
-var woocommerce_params = {"ajax_url":"\/magazine\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/magazine\/?wc-ajax=%%endpoint%%"};
-</script>
-<script src='https://demo.studiopress.com/magazine/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.4.1' id='woocommerce-js'></script>
-<script id='wc-cart-fragments-js-extra'>
-var wc_cart_fragments_params = {"ajax_url":"\/magazine\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/magazine\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_58198aab13f36ee22a13c5874e31ed1d","fragment_name":"wc_fragments_58198aab13f36ee22a13c5874e31ed1d","request_timeout":"5000"};
-</script>
-<script src='https://demo.studiopress.com/magazine/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.4.1' id='wc-cart-fragments-js'></script>
-<script src='https://demo.studiopress.com/magazine/wp-content/plugins/atomic-blocks/dist/assets/js/dismiss.js?ver=1623070999' id='atomic-blocks-dismiss-js-js'></script>
-<script src='https://demo.studiopress.com/magazine/wp-includes/js/hoverIntent.min.js?ver=1.10.1' id='hoverIntent-js'></script>
-<script src='https://demo.studiopress.com/magazine/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.10' id='superfish-js'></script>
-<script src='https://demo.studiopress.com/magazine/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=3.3.5' id='superfish-args-js'></script>
-<script src='https://demo.studiopress.com/magazine/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=3.3.5' id='skip-links-js'></script>
-<script src='https://demo.studiopress.com/magazine/wp-content/themes/magazine-pro/js/move-entry-dates.js?ver=1.1.0' id='magazine-pro-move-entry-dates-js'></script>
+	<script src="{% static 'js/jquery.blockUI.min.js' %}" id='jquery-blockui-js'></script>
+<script src="{% static 'js/add-to-cart.min.js' %}" id='wc-add-to-cart-js'></script>
+<script src="{% static 'js/js.cookie.min.js' %}" id='js-cookie-js'></script>
+<script src="{% static 'js/woocommerce.min.js' %}" id='woocommerce-js'></script>
+<script src="{% static 'js/cart-fragments.min.js' %}" id='wc-cart-fragments-js'></script>
+<script src="{% static 'js/dismiss.js' %}" id='atomic-blocks-dismiss-js-js'></script>
+<script src="{% static 'js/hoverIntent.min.js' %}" id='hoverIntent-js'></script>
+<script src="{% static 'js/superfish.min.js' %}" id='superfish-js'></script>
+<script src="{% static 'js/superfish.args.min.js' %}" id='superfish-args-js'></script>
+<script src="{% static 'js/skip-links.min.js' %}" id='skip-links-js'></script>
+<script src="{% static 'js/move-entry-dates.js' %}" id='magazine-pro-move-entry-dates-js'></script>
 <script id='magazine-pro-responsive-menu-js-extra'>
 var genesis_responsive_menu = {"mainMenu":"Menu","subMenu":"Submenu","menuClasses":{"combine":[".nav-primary",".nav-header",".nav-secondary"]}};
 </script>
-<script src='https://demo.studiopress.com/magazine/wp-content/themes/magazine-pro/js/responsive-menus.min.js?ver=3.6.0' id='magazine-pro-responsive-menu-js'></script>
-<script src='https://demo.studiopress.com/magazine/wp-includes/js/wp-embed.min.js?ver=5.8.4' id='wp-embed-js'></script>
+<script src="{% static 'js/responsive-menus.min.js' %}" id='magazine-pro-responsive-menu-js'></script>
+<script src="{% static 'js/wp-embed.min.js' %}" id='wp-embed-js'></script>
 </body>
 
 </html>
