@@ -1,0 +1,36 @@
+<section class="ab-block-post-grid featuredpost aligncenter button-more-link">
+<h2 class="ab-post-grid-section-title">Служебная деятельность</h2>
+<div class="ab-post-grid-items is-grid columns-2">
+  {% for sluj_new in sluj %}
+  <article id="post-495" class="ab-post-grid-item post-495 post type-post status-publish format-standard has-post-thumbnail category-getaways category-travel tag-hawaii tag-waterfalls entry">
+    <div class="ab-block-post-grid-image">
+      <a href="https://demo.studiopress.com/magazine/hawaii-getaway/" rel="bookmark" aria-hidden="true" tabindex="-1">
+        <img width="630" height="350" src="https://demo.studiopress.com/magazine/files/2013/09/hawaii-630x350.jpg" class="attachment-medium-featured size-medium-featured" alt="" loading="lazy" /></a>
+    </div>
+    <div class="ab-block-post-grid-text">
+      <header class="ab-block-post-grid-header">
+        <h3 class="ab-block-post-grid-title">
+          <a href="/index/post-id={{sluj_new.id}}/" rel="bookmark">{{ sluj_new.title }}</a>
+        </h3>
+<!--
+        <div class="ab-block-post-grid-byline">
+          <div class="ab-block-post-grid-author" itemprop="author" itemtype="https://schema.org/Person">
+            <a class="ab-text-link" href="https://demo.studiopress.com/magazine/author/admin/" itemprop="url" rel="author">
+              <span itemprop="name">{{ sluj_new.author }}</span>
+            </a>
+          </div>
+          <time datetime="2013-10-10T14:56:04+00:00" class="ab-block-post-grid-date" itemprop="datePublished">{{ sluj_new.show_at | date:'d E Y'}}</time>
+        </div>
+-->
+      </header>
+      <div class="ab-block-post-grid-excerpt">
+        <p> {{ sluj_new.body | truncatechars:100 }}</p>
+        <p>
+          <a class="ab-block-post-grid-more-link ab-text-link" href="/index/post-id={{sluj_new.id}}/" rel="bookmark">Продолжить чтение</a>
+        </p>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+</section>

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<main class="content" id="genesis-content">
+  <article class="post-2691 page type-page status-publish entry" aria-label="Homepage" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="entry-content" itemprop="text">
+
+<!-- LAST NEWS -->
+  {% include 'news/last_news.html' %}
+<!-- END LAST NEWS -->
+
+
+<!-- SLUJ -->
+{% if sluj %}
+  {% include 'news/sluj.html' %}
+{% endif %}
+<!-- END SLUJ -->
+<!-- VOSP -->
+{% if vosp %}
+  {% include 'news/vosp.html' %}
+{% endif %}
+<!-- END VOSP -->
+
+    </div>
+  </article>
+</main>
+{% endblock %}

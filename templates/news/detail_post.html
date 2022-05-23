@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<main class="content" id="genesis-content">
+  <article class="post-2691 page type-page status-publish entry" aria-label="Homepage" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="entry-content" itemprop="text">
+      <div class="ab-block-post-grid-text">
+        <header class="entry-header">
+          <h1 class="entry-title" itemprop="headline">{{ news_post.title }}</h1>
+            <p class="entry-meta">
+              <time class="entry-time">{{ news_post.show_at | date:"d E Y h:m"}}</time>
+                автор
+              <span class="entry-author" itemprop="author">
+                <a href="/author-id/{{ news_post.author.id }}" class="entry-author-link" rel="author" itemprop="url">
+                  <span class="entry-author-name" itemprop="name">{{ news_post.author.username }}</span>
+                </a>
+              </span>
+            </p>
+        </header>
+        <div class="ab-block-post-grid-excerpt"><p>{{ news_post.body | safe }}</p>
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
+{% endblock %}
