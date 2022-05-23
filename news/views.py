@@ -27,10 +27,13 @@ def detail_post(request, post_id):
     banner = Foto.objects.get(id=207)
 
     if len(news_post) > 0:
+        comments = news_post[0].get_all_comment()
+        print(comments[0].message)
         content = {
                 'news_post' :   news_post[0],
                 'all_foto'  :   all_foto,
                 'banner'    :   banner,
+                'comments'  :   comments,
             }
         return render(request, 'news/detail_post.html', content )
     else:
