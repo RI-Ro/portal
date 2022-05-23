@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
-from .models import NewsPost, Foto
+from .models import NewsPost, Foto, Comment, UserPortal
 
 
 def index(request):
@@ -28,7 +28,6 @@ def detail_post(request, post_id):
 
     if len(news_post) > 0:
         comments = news_post[0].get_all_comment()
-        print(comments[0].message)
         content = {
                 'news_post' :   news_post[0],
                 'all_foto'  :   all_foto,
@@ -38,3 +37,14 @@ def detail_post(request, post_id):
         return render(request, 'news/detail_post.html', content )
     else:
         return render(request, 'news/error_search_post.html', {"post_id" : post_id})
+
+def add_comment(request):
+    try:
+        c = Comment()
+        c.message=request.POST['comment']
+        c.user=UserPortal.objects.get(id=request.user.id)
+        c.post=NewsPost.objects.get(id=request.POST['post-id'])
+        c.save()
+    except:
+        pass
+    return redirect('/post-id={}'.format(request.POST['post-id']))

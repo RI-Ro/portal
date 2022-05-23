@@ -19,10 +19,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from news.views import detail_post
+from news.views import detail_post, add_comment
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'add-comment/$', add_comment, name='add_comment'),
     url(r'post-id=(?P<post_id>[0-9]+)/$', detail_post),
     url(r'index$', include('news.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
