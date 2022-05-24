@@ -21,9 +21,12 @@ from django.conf.urls.static import static
 
 from news.views import detail_post, add_comment
 
-urlpatterns = [
+urlpatterns = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
     url(r'^admin/', admin.site.urls),
     url(r'add-comment/$', add_comment, name='add_comment'),
-    url(r'post-id=(?P<post_id>[0-9]+)/$', detail_post),
-    url(r'index$', include('news.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#    url(r'post-id=(?P<post_id>[0-9]+)/$', detail_post),
+    url(r'', include('news.urls')),
+]

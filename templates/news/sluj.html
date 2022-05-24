@@ -4,13 +4,13 @@
   {% for sluj_new in sluj %}
   <article id="post-495" class="ab-post-grid-item post-495 post type-post status-publish format-standard has-post-thumbnail category-getaways category-travel tag-hawaii tag-waterfalls entry">
     <div class="ab-block-post-grid-image">
-      <a href="/index/post-id={{sluj_new.id}}/" rel="bookmark" aria-hidden="true" tabindex="-1">
+      <a href="/post-id={{sluj_new.id}}/" rel="bookmark" aria-hidden="true" tabindex="-1">
         <img width="630" height="350" src="{{ sluj_new.prev_image.url }}" class="attachment-medium-featured size-medium-featured" alt="" loading="lazy" /></a>
     </div>
     <div class="ab-block-post-grid-text">
       <header class="ab-block-post-grid-header">
         <h3 class="ab-block-post-grid-title">
-          <a href="/index/post-id={{sluj_new.id}}/" rel="bookmark">{{ sluj_new.title }}</a>
+          <a href="/post-id={{sluj_new.id}}/" rel="bookmark">{{ sluj_new.title }}</a>
         </h3>
 <!--
         <div class="ab-block-post-grid-byline">
@@ -26,7 +26,7 @@
       <div class="ab-block-post-grid-excerpt">
         <p> {{ sluj_new.body | truncatechars:100 }}</p>
         <p>
-          <a class="ab-block-post-grid-more-link ab-text-link" href="/index/post-id={{sluj_new.id}}/" rel="bookmark">Продолжить чтение</a>
+          <a class="ab-block-post-grid-more-link ab-text-link" href="/post-id={{sluj_new.id}}/" rel="bookmark">Продолжить чтение</a>
         </p>
       </div>
     </div>
