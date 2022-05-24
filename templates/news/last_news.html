@@ -3,21 +3,16 @@
     <div class="ab-post-grid-items is-grid columns-1">
         <article id="post-487" class="ab-post-grid-item post-487 post type-post status-publish format-standard has-post-thumbnail category-fashion tag-nordstrom tag-womens-fashion entry">
             <div class="ab-block-post-grid-image">
-                <a href="#" rel="bookmark" aria-hidden="true" tabindex="-1">
-                    <img width="750" height="420" src="https://demo.studiopress.com/magazine/files/2013/09/fashion-1-750x420.jpg" class="attachment-large-featured size-large-featured" alt="" loading="lazy" /></a>
+                <a href="/index/post-id={{last_news.id}}/" rel="bookmark" aria-hidden="true" tabindex="-1">
+                    <img width="750" height="420" src="{{ last_news.prev_image.url }}" class="attachment-large-featured size-large-featured" alt="" loading="lazy" /></a>
             </div>
             <div class="ab-block-post-grid-text">
                 <header class="ab-block-post-grid-header">
                     <h3 class="ab-block-post-grid-title">
-                        <a href="#" rel="bookmark">{{ last_news.title }}</a>
+                        <a href="/index/post-id={{last_news.id}}/" rel="bookmark">{{ last_news.title }}</a>
                     </h3>
 
                       <div class="ab-block-post-grid-byline">
-                        <div class="ab-block-post-grid-author" itemprop="author" itemtype="https://schema.org/Person">
-                            <a class="ab-text-link" href="https://demo.studiopress.com/magazine/author/admin/" itemprop="url" rel="author">
-                                <span itemprop="name">{{ last_news.author }}</span>
-                            </a>
-                        </div>
                         <time datetime="2013-09-10T14:54:21+00:00" class="ab-block-post-grid-date" itemprop="datePublished">{{ last_news.show_at | date:'d E Y'}}</time>
                     </div>
 
